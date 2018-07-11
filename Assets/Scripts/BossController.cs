@@ -8,6 +8,7 @@ public class BossController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // TODO: remove duplicate
         DontDestroyOnLoad(transform.gameObject);
     }
 

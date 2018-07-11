@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61265960394437322}
   - component: {fileID: 95695305433240286}
   - component: {fileID: 114399191442779788}
-  - component: {fileID: 114957182614068504}
+  - component: {fileID: 114333908621247514}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -86,6 +86,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114333908621247514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707992139048780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ff39328a55a794cbc835b5d41a694a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleScene: combat_scene
 --- !u!114 &114399191442779788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,18 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55e119033f3b9a4e9e10184314bfa75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114957182614068504
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707992139048780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ff39328a55a794cbc835b5d41a694a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battleScene: battle_scene
 --- !u!212 &212692678190322500
 SpriteRenderer:
   m_ObjectHideFlags: 1
