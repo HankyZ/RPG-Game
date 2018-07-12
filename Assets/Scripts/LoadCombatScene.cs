@@ -36,6 +36,7 @@ public class LoadCombatScene : MonoBehaviour
         player = collision.gameObject;
         player.GetComponent<ExitCombatScene>().originalScene = SceneManager.GetActiveScene().name;
         player.GetComponent<ExitCombatScene>().enemy = gameObject;
+        player.GetComponent<ExitCombatScene>().originalCameraPosition = Camera.main.transform.position;
         player.GetComponent<ExitCombatScene>().originalPlayerPosition = player.transform.position;
         player.GetComponent<ExitCombatScene>().originalEnemyPosition = transform.position;
 
@@ -44,6 +45,8 @@ public class LoadCombatScene : MonoBehaviour
         animator.SetBool("InCombat", true);
         player.transform.GetComponent<Animator>().SetBool("PlayerInCombat", true);
 
+        Camera.main.GetComponent<CameraController>().followTarget = null;
+        Camera.main.transform.position = new Vector3(0, 0, -10);
         transform.position = new Vector3(1.5f, 0.5f, 0f);
         player.transform.position = new Vector3(-2f, -1f, 0f);
 

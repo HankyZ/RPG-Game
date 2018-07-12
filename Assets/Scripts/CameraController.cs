@@ -9,10 +9,20 @@ public class CameraController : MonoBehaviour {
 
     private Camera myCam;
     private Vector3 targetPosition;
+    private static bool cameraExists;
 
 	// Use this for initialization
 	void Start () {
         myCam = GetComponent<Camera>();
+        if (!cameraExists)
+        {
+            DontDestroyOnLoad(gameObject);
+            cameraExists = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 	}
 	
 	// Update is called once per frame

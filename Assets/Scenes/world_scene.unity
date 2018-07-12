@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalScene: 
   enemy: {fileID: 0}
+  originalCameraPosition: {x: 0, y: 0, z: 0}
   originalPlayerPosition: {x: 0, y: 0, z: 0}
   originalEnemyPosition: {x: 0, y: 0, z: 0}
   exitCombat: 0
@@ -252,7 +253,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1290327934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -14.62, z: -10}
+  m_LocalPosition: {x: 13.8, y: -21.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

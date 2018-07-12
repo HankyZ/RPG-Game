@@ -10,6 +10,7 @@ public class ExitCombatScene : MonoBehaviour
 
     public GameObject enemy;
 
+    public Vector3 originalCameraPosition;
     public Vector3 originalPlayerPosition;
     public Vector3 originalEnemyPosition;
 
@@ -35,6 +36,9 @@ public class ExitCombatScene : MonoBehaviour
         {
             SceneManager.LoadScene(originalScene);
 
+            Camera.main.GetComponent<CameraController>().followTarget = gameObject;
+
+            Camera.main.transform.position = originalCameraPosition;
             transform.position = originalPlayerPosition;
 
             if (enemy != null)

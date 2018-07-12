@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    private static bool exists;
 
     // Use this for initialization
     void Start()
     {
-        // TODO: remove duplicate
-        DontDestroyOnLoad(transform.gameObject);
+        if (!exists)
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            exists = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

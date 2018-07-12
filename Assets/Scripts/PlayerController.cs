@@ -13,13 +13,25 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 lastMove;
 
+    private static bool playerExists;
+
     // Use this for initialization
     void Start()
     {
         // TODO: remove duplicate
-        DontDestroyOnLoad(transform.gameObject);
+
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();
+        if (!playerExists)
+        {
+            Camera.main.GetComponent<CameraController>().followTarget = gameObject;
+            DontDestroyOnLoad(transform.gameObject);
+            playerExists = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
