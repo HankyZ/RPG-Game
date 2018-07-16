@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    private GameController gameController;
     private static bool exists;
 
     // Use this for initialization
@@ -12,6 +13,7 @@ public class BossController : MonoBehaviour
         if (!exists)
         {
             DontDestroyOnLoad(transform.gameObject);
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
             exists = true;
         }
         else
@@ -24,5 +26,15 @@ public class BossController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.name != "Player")
+            return;
+
+        gameController.DoCombat(gameObject, null);
+        
     }
 }

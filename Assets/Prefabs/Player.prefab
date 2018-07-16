@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50451394693436044}
   - component: {fileID: 61413558506403748}
   - component: {fileID: 114414435100756078}
+  - component: {fileID: 114790686183332854}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846636419683622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.14, y: -21.37, z: 0}
+  m_LocalPosition: {x: 14, y: -14, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,6 +119,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &114790686183332854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846636419683622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfccf882399e0b4789ebb51ec10bf39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalScene: 
+  enemy: {fileID: 0}
+  originalCameraPosition: {x: 0, y: 0, z: 0}
+  originalPlayerPosition: {x: 0, y: 0, z: 0}
+  originalEnemyPosition: {x: 0, y: 0, z: 0}
+  exitCombat: 0
 --- !u!212 &212957614443577364
 SpriteRenderer:
   m_ObjectHideFlags: 1

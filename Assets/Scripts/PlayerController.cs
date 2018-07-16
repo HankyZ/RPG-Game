@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // TODO: remove duplicate
-
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         if (!playerExists)
