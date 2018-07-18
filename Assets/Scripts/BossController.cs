@@ -10,16 +10,7 @@ public class BossController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (!exists)
-        {
-            DontDestroyOnLoad(transform.gameObject);
             gameController = GameObject.Find("GameController").GetComponent<GameController>();
-            exists = true;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     // Update is called once per frame

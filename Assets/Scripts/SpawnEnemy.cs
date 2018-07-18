@@ -14,6 +14,7 @@ public class SpawnEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        enemy = GameObject.Find("Enemy");
     }
 	
 	// Update is called once per frame
@@ -31,7 +32,7 @@ public class SpawnEnemy : MonoBehaviour {
 
         if (Random.Range(0, 49) == 0)
         {
-            gameController.DoCombat(gameObject, combatScene);
+            gameController.DoCombat(enemy, combatScene);
         }
 
         

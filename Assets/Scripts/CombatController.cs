@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CombatController : MonoBehaviour
 {
+    private GameController gameController;
 
     public string defaultCombatScene;
 
@@ -12,7 +13,7 @@ public class CombatController : MonoBehaviour
     public bool allowCombat;
     public bool combatOver;
 
-    private bool exists;
+    private static bool exists;
     private bool inCombat;
 
     private GameObject player;
@@ -32,10 +33,10 @@ public class CombatController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         DontDestroyOnLoad(transform.gameObject);
         player = GameObject.Find("Player");
         exists = true;
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -60,6 +61,8 @@ public class CombatController : MonoBehaviour
             this.combatScene = combatScene;
 
         this.enemy = enemy;
+
+        DontDestroyOnLoad(enemy);
 
         LoadCombatScene();
 
@@ -86,22 +89,23 @@ public class CombatController : MonoBehaviour
 
     private void ExitCombatScene()
     {
+        Destroy(enemy);
+
         SceneManager.LoadScene(originalScene);
 
-        Camera.main.GetComponent<CameraController>().followTarget = gameObject;
+        Camera.main.GetComponent<CameraController>().followTarget = player;
 
         Camera.main.transform.position = originalCameraPosition;
-        transform.position = originalPlayerPosition;
-
-        if (originalEnemyPosition.Equals(new Vector3(1000, 1000, 1000)))
-        {
-            enemy.transform.position = originalEnemyPosition;
-        }
+        player.transform.position = originalPlayerPosition;
 
         player.GetComponent<Animator>().SetBool("PlayerInCombat", false);
         enemy.GetComponent<Animator>().SetBool("InCombat", false);
 
         inCombat = false;
         combatOver = false;
+
+        if (enemy.name == "Boss")
+            GameController.levelCompleted = true;
+        
     }
 }
