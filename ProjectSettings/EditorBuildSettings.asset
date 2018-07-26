@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/combat_scene.unity
     guid: 77da2c1aca431954793c484aabe3b04f
+  - enabled: 1
+    path: Assets/Scenes/ending_scene.unity
+    guid: 48dc75f2a31aa3d43be52240809ba901

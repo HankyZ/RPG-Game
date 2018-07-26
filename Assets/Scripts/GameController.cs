@@ -34,7 +34,13 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if (levelCompleted)
+        {
             allowCombat = false;
+            Destroy(GameObject.Find("Player"));
+            Destroy(GameObject.Find("Boss"));
+            SceneManager.LoadScene("ending_scene");
+            Destroy(gameObject);
+        }
     }
 
     public void DoCombat(GameObject enemy, string combatScene)

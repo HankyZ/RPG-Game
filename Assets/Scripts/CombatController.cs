@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CombatController : MonoBehaviour
 {
@@ -106,6 +107,6 @@ public class CombatController : MonoBehaviour
 
         if (enemy.name == "Boss")
             GameController.levelCompleted = true;
-        
+
     }
 }
